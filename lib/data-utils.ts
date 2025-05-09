@@ -6,16 +6,24 @@ export interface Website {
   url: string
   description: string
   category: string
+  subcategory?: string // Added subcategory field (optional)
   tags: string[]
   dateAdded: string
   featured?: boolean
-  pricing?: "free" | "paid" | "trial" | "limited" // Added pricing field
+  pricing?: "free" | "paid" | "trial" | "limited"
+}
+
+export interface SubCategory {
+  id: string
+  name: string
+  description: string
 }
 
 export interface Category {
   id: string
   name: string
   description: string
+  subcategories?: SubCategory[] // Added subcategories field
 }
 
 // Base GitHub URL for data files
@@ -41,10 +49,22 @@ export async function getAllCategories(): Promise<Category[]> {
   return data || []
 }
 
+// Helper function to get a single category by ID
+export async function getCategoryById(categoryId: string): Promise<Category | undefined> {
+  const categories = await getAllCategories()
+  return categories.find((category) => category.id === categoryId)
+}
+
 // Helper function to get websites by category
 export async function getWebsitesByCategory(category: string): Promise<Website[]> {
   const data = await fetchWithCache(`${GITHUB_BASE_URL}/${category}.json`)
   return data || []
+}
+
+// Helper function to get websites by subcategory
+export async function getWebsitesBySubcategory(category: string, subcategory: string): Promise<Website[]> {
+  const websites = await getWebsitesByCategory(category)
+  return websites.filter((website) => website.subcategory === subcategory)
 }
 
 // Helper function to get all websites
@@ -70,6 +90,12 @@ export async function getFeaturedWebsites(): Promise<Website[]> {
 // Helper function to get the count of websites in each category
 export async function getCategoryCount(categoryId: string): Promise<number> {
   const websites = await getWebsitesByCategory(categoryId)
+  return websites.length
+}
+
+// Helper function to get the count of websites in each subcategory
+export async function getSubcategoryCount(categoryId: string, subcategoryId: string): Promise<number> {
+  const websites = await getWebsitesBySubcategory(categoryId, subcategoryId)
   return websites.length
 }
 

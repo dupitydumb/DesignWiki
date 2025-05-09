@@ -43,6 +43,7 @@ export default async function Home({ params, searchParams }: HomePageProps) {
             categories.map(async (category) => {
               const Icon = categoryIcons[category.id as keyof typeof categoryIcons]
               const count = await getCategoryCount(category.id)
+              const hasSubcategories = category.subcategories && category.subcategories.length > 0
 
               return (
                 <Link key={category.id} href={`/category/${category.id}`} className="block">
@@ -56,6 +57,27 @@ export default async function Home({ params, searchParams }: HomePageProps) {
                       </div>
                       <CardTitle className="mt-4">{category.name}</CardTitle>
                       <CardDescription>{category.description}</CardDescription>
+
+                      {hasSubcategories && (
+                        <div className="mt-3">
+                          <p className="text-xs text-muted-foreground mb-2">Subcategories:</p>
+                          <div className="flex flex-wrap gap-1">
+                            {(category.subcategories ?? []).slice(0, 3).map((subcategory) => (
+                              <span
+                                key={subcategory.id}
+                                className="text-xs px-2 py-1 rounded-full border border-border bg-background"
+                              >
+                                {subcategory.name}
+                              </span>
+                            ))}
+                            {(category.subcategories ?? []).length > 3 && (
+                              <span className="text-xs px-2 py-1 rounded-full border border-border bg-background">
+                                +{(category.subcategories ?? []).length - 3} more
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </CardHeader>
                     <CardFooter>
                       <div className="flex items-center text-blue-500 text-sm font-medium">
