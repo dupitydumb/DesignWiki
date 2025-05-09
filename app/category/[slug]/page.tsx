@@ -11,6 +11,7 @@ interface CategoryPageProps {
   params: {
     slug: string
   }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export async function generateStaticParams() {
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
+export default async function CategoryPage({ params, searchParams }: CategoryPageProps) {
   const { slug } = params
   const categories = await getAllCategories()
   const category = categories.find((cat) => cat.id === slug)

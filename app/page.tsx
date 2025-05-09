@@ -14,7 +14,11 @@ const categoryIcons = {
   "learning-resources": Bookmark,
 }
 
-export default async function Home() {
+interface HomePageProps {
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default async function Home({ searchParams }: HomePageProps) {
   const categories = await getAllCategories()
 
   return (
