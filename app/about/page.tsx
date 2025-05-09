@@ -5,11 +5,15 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface AboutPageProps {
-  params: { [key: string]: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ [key: string]: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function AboutPage({ params, searchParams }: AboutPageProps) {
+export default async function AboutPage({ params, searchParams }: AboutPageProps) {
+  // Await the params and searchParams
+  await params
+  await searchParams
+
   return (
     <main className="container py-8 md:py-12">
       <div className="mb-8">

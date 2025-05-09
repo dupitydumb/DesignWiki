@@ -8,8 +8,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { getAllCategories, getPricingTagDetails, getWebsitesByCategory } from "@/lib/data-utils"
 
 interface CategoryPageProps {
-  params: { [key: string]: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ [key: string]: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export async function generateStaticParams() {
@@ -20,7 +20,9 @@ export async function generateStaticParams() {
 }
 
 export default async function CategoryPage({ params, searchParams }: CategoryPageProps) {
-  const { slug } = params
+  const resolvedParams = await params
+  const { slug } = resolvedParams
+
   const categories = await getAllCategories()
   const category = categories.find((cat) => cat.id === slug)
 
