@@ -1,0 +1,123 @@
+[
+  {
+    "id": "figma",
+    "title": "Figma",
+    "url": "https://figma.com",
+    "description": "Collaborative interface design tool that's taking over the design world",
+    "category": "design-tools",
+    "tags": ["design", "collaboration", "prototyping"],
+    "dateAdded": "2023-01-15",
+    "featured": true,
+    "pricing": "free"
+  },
+  {
+    "id": "adobe-xd",
+    "title": "Adobe XD",
+    "url": "https://adobe.com/products/xd.html",
+    "description": "Vector-based user experience design tool for web apps and mobile apps",
+    "category": "design-tools",
+    "tags": ["design", "prototyping", "adobe"],
+    "dateAdded": "2023-01-18",
+    "featured": false,
+    "pricing": "paid"
+  },
+  {
+    "id": "sketch",
+    "title": "Sketch",
+    "url": "https://sketch.com",
+    "description": "Digital design toolkit with a focus on user interface and user experience design",
+    "category": "design-tools",
+    "tags": ["design", "mac", "interface"],
+    "dateAdded": "2023-01-20",
+    "featured": false,
+    "pricing": "paid"
+  },
+  {
+    "id": "blender",
+    "title": "Blender",
+    "url": "https://blender.org",
+    "description": "Free and open source 3D creation suite supporting the entirety of the 3D pipeline",
+    "category": "3d-tools",
+    "tags": ["3d", "modeling", "animation", "open-source"],
+    "dateAdded": "2023-02-10",
+    "featured": true,
+    "pricing": "free"
+  },
+  {
+    "id": "cinema-4d",
+    "title": "Cinema 4D",
+    "url": "https://maxon.net/cinema-4d",
+    "description": "Professional 3D modeling, animation, and rendering software",
+    "category": "3d-tools",
+    "tags": ["3d", "modeling", "animation", "rendering"],
+    "dateAdded": "2023-02-15",
+    "featured": false,
+    "pricing": "paid"
+  },
+  {
+    "id": "unity",
+    "title": "Unity",
+    "url": "https://unity.com",
+    "description": "Real-time development platform for games, automotive, architecture, and more",
+    "category": "game-dev-tools",
+    "tags": ["game-engine", "3d", "2d", "development"],
+    "dateAdded": "2023-03-10",
+    "featured": true,
+    "pricing": "limited"
+  },
+  {
+    "id": "unreal-engine",
+    "title": "Unreal Engine",
+    "url": "https://unrealengine.com",
+    "description": "Advanced real-time 3D creation tool for photoreal visuals and immersive experiences",
+    "category": "game-dev-tools",
+    "tags": ["game-engine", "3d", "development"],
+    "dateAdded": "2023-03-15",
+    "featured": false,
+    "pricing": "free"
+  },
+  {
+    "id": "openai",
+    "title": "OpenAI",
+    "url": "https://openai.com",
+    "description": "AI research lab consisting of the for-profit corporation OpenAI LP and its parent company",
+    "category": "ai-tools",
+    "tags": ["ai", "machine-learning", "research"],
+    "dateAdded": "2023-04-01",
+    "featured": true,
+    "pricing": "trial"
+  },
+  {
+    "id": "huggingface",
+    "title": "Hugging Face",
+    "url": "https://huggingface.co",
+    "description": "AI community building the future of artificial intelligence through open source and open science",
+    "category": "ai-tools",
+    "tags": ["ai", "machine-learning", "community", "open-source"],
+    "dateAdded": "2023-04-05",
+    "featured": false,
+    "pricing": "limited"
+  },
+  {
+    "id": "notion",
+    "title": "Notion",
+    "url": "https://notion.so",
+    "description": "All-in-one workspace for notes, tasks, wikis, and databases",
+    "category": "productivity",
+    "tags": ["notes", "organization", "collaboration"],
+    "dateAdded": "2023-04-15",
+    "featured": true,
+    "pricing": "limited"
+  },
+  {
+    "id": "mdn",
+    "title": "MDN Web Docs",
+    "url": "https://developer.mozilla.org",
+    "description": "Resources for developers, by developers, documenting web technologies",
+    "category": "learning-resources",
+    "tags": ["documentation", "web-development", "reference"],
+    "dateAdded": "2023-05-01",
+    "featured": true,
+    "pricing": "free"
+  }
+]
