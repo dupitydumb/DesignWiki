@@ -4,7 +4,12 @@ import { ArrowLeft, FileSpreadsheet, Github, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function AboutPage() {
+interface AboutPageProps {
+  params: { [key: string]: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default function AboutPage({ params, searchParams }: AboutPageProps) {
   return (
     <main className="container py-8 md:py-12">
       <div className="mb-8">

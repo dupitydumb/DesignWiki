@@ -15,10 +15,11 @@ const categoryIcons = {
 }
 
 interface HomePageProps {
+  params: { [key: string]: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default async function Home({ searchParams }: HomePageProps) {
+export default async function Home({ params, searchParams }: HomePageProps) {
   const categories = await getAllCategories()
 
   return (

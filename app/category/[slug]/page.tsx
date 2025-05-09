@@ -8,9 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { getAllCategories, getPricingTagDetails, getWebsitesByCategory } from "@/lib/data-utils"
 
 interface CategoryPageProps {
-  params: {
-    slug: string
-  }
+  params: { [key: string]: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
